@@ -1,0 +1,23 @@
+.weather-container{
+    background-color: #fafafab6;
+    max-width: 1000px;
+    min-height: 100vh;
+    padding: 1em;
+    color: var(--dark-colour);
+}
+
+.weather-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black */
+    margin-bottom: 1.5em;
+}
+.weather-header-city-name{
+    margin: 0;
+}
+
+.weather-header-back-btn{
+    background-color: #fafafab6;
+    border: none;
+}

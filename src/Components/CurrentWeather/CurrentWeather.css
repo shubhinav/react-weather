@@ -1,0 +1,49 @@
+
+/*** MAIN DETAILS DIV ***/
+
+.current-weather-main h1,p{
+    margin: 0;
+}
+
+.current-weather-main{
+   display: grid;
+   grid-gap: 0.25em;
+   grid-template-columns: repeat(2, 1fr);
+   margin-bottom: 2.5em;
+}
+.current-weather-main-desc{
+    grid-column: -1 / 1;
+}
+.current-weather-main-temp{
+    position: relative;
+    font-size: 80px;
+    letter-spacing: 2px;
+}
+
+.current-weather-main-temp span{
+    font-size: 30px;
+    position: absolute;
+    top: 12px;
+}
+
+.current-weather-main-desc span{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/*** SECONDARY DETAILS DIV ***/
+.current-weather-secondary{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-gap: 1.5em 0.25em;
+    
+}
+
+.current-weather-secondary p{
+    display: flex;
+}
+.current-weather-secondary p span{
+    margin-left: 5px;
+}

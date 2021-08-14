@@ -1,0 +1,180 @@
+
+
+
+/*** TYPOGRAPHY ***/
+
+.home-logo{
+    font-size: 18px;
+    font-weight: 400;
+}
+.home-logo span{
+    color: var(--primary-colour);
+    font-weight: bold;
+}
+.home-title{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.home-title span{
+    color: var(--primary-colour);
+}
+
+.home-sub-title{
+    font-size: 19px;
+}
+
+.home-input-group label, .home-input-group button, .home-input-group input{
+    font-size: 14px;
+}
+
+
+/*** LAYOUT AND STYLING ***/
+
+.home-container{
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+    max-width: 1000px;
+    min-height: 100vh;
+    padding: 1em 1.5em;
+}
+
+.home-content{
+    margin: 6em 0 6em;
+}
+
+.home-input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-input-group input{
+    margin: 10px 0;
+    padding: 0.75em;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+.home-input-group input:focus{
+    outline: none;
+    border: 2px solid var(--primary-colour)
+}
+
+.home-input-group input::placeholder{
+    color: rgb(201, 201, 201);
+}
+
+.home-input-group button{
+    border: 0;
+    background-color: var(--primary-colour);
+    color: var(--light-colour);
+    padding: 0.75em;
+    border-radius: 5px;
+    transition: 0.2s;
+    box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.5);
+}
+.home-input-group button:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.6);
+}
+.home-input-group button:disabled{
+    cursor: not-allowed;
+}
+
+.city-link-list{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    margin-top: 2em;
+}
+
+.city-link{
+    text-decoration: none;
+    color: var(--dark-colour);
+}
+.city-link p{
+    margin: 0;
+}
+.city-link div{
+    padding: 1em;
+    border-bottom: 1px solid gainsboro;
+}
+.city-link div:hover{
+    cursor: pointer;
+    background-color: #fafafa;
+}
+.city-link:last-child div{
+    border-bottom: 0;
+    border-radius: 0 0 10px 10px;
+}
+.city-link:first-child div{
+    border-radius: 10px 10px 0 0;
+}
+.city-link-list{
+    grid-column: -1/1;
+}
+.city-not-found{
+    grid-column: -1/1;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-top: 1.5em;
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@media(min-width: 680px){
+
+    .home-logo{
+        position: absolute;
+        top: -30px;
+        left: 0;  
+    }
+
+    .home-container{
+        width: 95%;
+        position: relative;
+        margin: 5em auto;
+        padding: 4em 2em;
+        box-shadow: 1px 1px 10px -6px rgba(0,0,0,0.3);
+        border-radius: 15px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-gap: 3em;
+        align-items: center;
+        min-height: auto;
+    }
+    .home-content{
+        margin: 0;
+    }
+    .city-link-list{
+        margin-top: 0;
+    }
+    .loader{
+        margin: 0 auto;
+    }
+    .city-not-found{
+        margin: 0;
+    }
+}
+
+
+@media(min-width: 900px){
+    .home-logo{
+        top: -40px;
+        font-size: 25px;
+    }
+    .home-title{
+        font-size: 50px;
+        margin-bottom: 25px;
+        line-height: 1.1;
+    }
+    .home-sub-title{
+        font-size: 20px;
+    }
+
+    .home-input-group label, .home-input-group button, .home-input-group input{
+        font-size: 16px;
+    }
+
+}
