@@ -7,11 +7,11 @@
 }
 
 .weather-header{
+    padding-right: 8px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    /* border: 1px solid black */
-    margin-bottom: 1.5em;
+    align-items: flex-start;
+    margin-bottom: 1em;
 }
 .weather-header-city-name{
     margin: 0;
@@ -19,5 +19,6 @@
 
 .weather-header-back-btn{
     background-color: #fafafab6;
-    border: none;
+    padding: 0;
+    border: 0;
 }
