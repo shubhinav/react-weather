@@ -8,7 +8,7 @@ import { getIcon, getIconColor } from "../../Utils/GetIconDetails";
 
 export default function CurrentWeather(){
 
-    const {cityWeather,icon,iconColor,setIconDetails} = useContext(CityContext)
+    const {cityWeather} = useContext(CityContext)
     const {current} = cityWeather
     const weather = current.weather[0]
 

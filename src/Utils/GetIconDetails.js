@@ -26,7 +26,6 @@ function getIcon(id){
     }
 
     if(id.toString()[0]==="8"){
-        console.log("first")
         if(id===800){
             icon="grommet-icons:sun"
         }
@@ -69,7 +68,6 @@ function getIconColor(id){
     }
 
     if(id.toString()[0]==="8"){
-        console.log("first")
         if(id===800){
             iconColor="#FDC500"
         }
