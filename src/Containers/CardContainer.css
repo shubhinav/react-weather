@@ -2,6 +2,7 @@
     background-color: var(--light-colour);
     color: var(--dark-colour);
     padding: 1.25em;
+    margin-bottom: 3em;
     border-radius: 15px;
     box-shadow: 1px 1px 8px -6px rgba(0,0,0,0.2);
 }

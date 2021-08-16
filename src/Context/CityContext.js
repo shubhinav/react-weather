@@ -26,10 +26,15 @@ function CityContextProvider(props){
     function clearState(){
         setCanAccessRoute(false)
         setCityWeather([])
-    }
-
+    }    
+    
     return(
-        <CityContext.Provider value={{canAccessRoute, cityName, cityWeather, getWeather, clearState, isError}}>
+        <CityContext.Provider value={{canAccessRoute,
+                                    cityName,
+                                    cityWeather,
+                                    getWeather,
+                                    clearState,
+                                    isError}}>
             {props.children}
         </CityContext.Provider>
     )
