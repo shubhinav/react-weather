@@ -15,10 +15,18 @@
 }
 .weather-header-city-name{
     margin: 0;
+    font-size: 24px;
+}
+.weather-header-city-name span{
+    font-size: 18px;
+    color: grey;
 }
 
 .weather-header-back-btn{
     background-color: #fafafab6;
     padding: 0;
     border: 0;
+}
+.weather-header-hbmenu{
+    font-size: 22px;
 }

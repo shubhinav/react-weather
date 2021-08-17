@@ -16,7 +16,7 @@ export default function CurrentWeather(){
         <>
             <div className="current-weather-main">
                 <h1 className="current-weather-main-temp">{Math.round(current.temp)}<span>&#176;C</span></h1>
-                <Icon icon={getIcon(weather.id)} style={{justifySelf: "right"}} width="100" height="100" color={getIconColor(weather.id)}/>
+                <Icon icon={getIcon(weather.id,weather.icon)} style={{justifySelf: "right"}} width="100" height="100" color={getIconColor(weather.id,weather.icon)}/>
                 <p className="current-weather-main-desc"><span>{weather.description}</span></p>
             </div>
 

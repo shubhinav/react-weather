@@ -1,5 +1,5 @@
 
-function getIcon(id){
+function getIcon(id,apiIcon){
 
     let icon;
     
@@ -27,10 +27,13 @@ function getIcon(id){
 
     if(id.toString()[0]==="8"){
         if(id===800){
-            icon="grommet-icons:sun"
+            apiIcon[2]==="d"?icon="grommet-icons:sun":icon="bi:moon"
         }
         else if(id===801){
-            icon="bi:cloud-sun"
+            apiIcon[2]==="d"?icon="bi:cloud-sun":icon="bi:cloud-moon"
+        }
+        else if(id===802){
+            icon="bi:cloud"
         }
         else{
             icon="bi:clouds"
@@ -41,7 +44,7 @@ function getIcon(id){
 }
 
 
-function getIconColor(id){
+function getIconColor(id,apiIcon){
 
     let iconColor
     
@@ -69,7 +72,7 @@ function getIconColor(id){
 
     if(id.toString()[0]==="8"){
         if(id===800){
-            iconColor="#FDC500"
+            apiIcon[2]==="d"?iconColor="#FDC500":iconColor="grey"
         }
         else{
             iconColor="grey"
@@ -81,3 +84,5 @@ function getIconColor(id){
 
 
 export {getIcon, getIconColor}
+
+// #FDC500
