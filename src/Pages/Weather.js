@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useContext} from 'react'
+import { useContext, useState, useRef, useEffect} from 'react'
 import { CityContext } from '../Context/CityContext'
 import CardContainer from '../Containers/CardContainer'
 import CurrentWeather from '../Components/CurrentWeather/CurrentWeather'
@@ -12,8 +12,10 @@ import "./Weather.css"
 
 export default function Weather(){
 
-    const {cityName, cityWeather, clearState, isError} = useContext(CityContext)
-    
+    const {cityName, cityCoord, cityWeather, clearState, isError, getWeather} = useContext(CityContext)
+    const [currentUnits, setCurrentUnits] = useState("metric")
+    const isInitialMount = useRef(true);
+
     window.onpopstate = function(e) {
         clearState();
      };
@@ -21,6 +23,19 @@ export default function Weather(){
     window.onhashchange = function(e){
         clearState();
      }
+
+    useEffect(() => {
+    if (isInitialMount.current) {
+        isInitialMount.current = false;
+    } else {
+        clearState();
+        getWeather(cityCoord, cityName, currentUnits)
+    }
+    },[currentUnits]); // eslint-disable-line react-hooks/exhaustive-deps 
+
+    function handleChange(e){
+        setCurrentUnits(e.target.value)
+    }
 
     return(
         <>
@@ -33,14 +48,25 @@ export default function Weather(){
                     <Link to="/">
                         <button className="weather-header-back-btn" 
                                 onClick={()=>clearState()}>
-                                {<Icon icon="akar-icons:chevron-left" color= "#333" width="28px" height="28px "/>}
+                                {<Icon icon="akar-icons:chevron-left" color= "#333" width="25px" height="25px"/>}
                         </button>
                     </Link>
-                    <h2 className="weather-header-city-name">{cityName}, <span>{convertTime(cityWeather.current.dt,cityWeather.timezone)}</span></h2>
-                    <span className="weather-header-hbmenu">&#9776;</span>
+                    <h2 className="weather-header-city-name">{cityName}, <span>{convertTime(cityWeather.current.dt,cityWeather.timezone)}</span></h2>                    
+                    <form className="weather-header-units-form">
+                        <label className={currentUnits==="metric" ? "checked" : ""}>
+                            <input type="radio" name="currentUnits" value="metric" id="metricRadio" checked={currentUnits==="metric"} onChange={handleChange}/>
+                            Metric - &#176;C, m/s
+                        </label>
+
+                        <label className={currentUnits==="imperial" ? "checked" : ""}>
+                            <input type="radio" name="currentUnits" value="imperial" id="imperialRadio" checked={currentUnits==="imperial"} onChange={handleChange}/>
+                            Imperial - &#176;F, mph
+                        </label>
+                    </form>
                 </header>
+                
                 <CardContainer>
-                    <CurrentWeather/>
+                    <CurrentWeather unit={currentUnits}/>
                 </CardContainer>
                 <CardContainer>
                     <HourlyWeather/>

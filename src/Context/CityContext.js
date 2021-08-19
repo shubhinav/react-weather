@@ -6,19 +6,22 @@ function CityContextProvider(props){
 
     const [cityWeather, setCityWeather] = useState()
     const [cityName, setCityName] = useState("")
+    const [cityCoord, setCityCoord] = useState({})
     const [canAccessRoute, setCanAccessRoute] = useState(false)
-    const [isError, setIsError] = useState("")
+    const [isError, setIsError] = useState(false)
 
-    async function getWeather(coord, name){
+    async function getWeather(coord, name, units="metric"){
         setCanAccessRoute(true)
-        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely&units=metric&appid=2fc55cd77d908bafa05668ad24c2cafc`
-        try{
-            const response  = await fetch(url)
+        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely&units=${units}&appid=a234d9ce7f41191163430ed8334d02f5`
+        
+        const response  = await fetch(url)
+        if(response.ok){
             const data = await response.json();
             setCityWeather(data)
             setCityName(name)
-        }  
-        catch(err){
+            setCityCoord(coord)
+        }
+        else{
             setIsError(true)
         }
     }
@@ -31,6 +34,7 @@ function CityContextProvider(props){
     return(
         <CityContext.Provider value={{canAccessRoute,
                                     cityName,
+                                    cityCoord,
                                     cityWeather,
                                     getWeather,
                                     clearState,

@@ -7,18 +7,16 @@
 }
 
 .weather-header{
-    padding-right: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
 }
 .weather-header-city-name{
+    justify-self: right;
+    font-size: 20px;
     margin: 0;
-    font-size: 24px;
 }
 .weather-header-city-name span{
-    font-size: 18px;
+    font-size: 16px;
     color: grey;
 }
 
@@ -26,7 +24,33 @@
     background-color: #fafafab6;
     padding: 0;
     border: 0;
+    display: flex;
+    align-items: center;   
+    cursor: pointer;
 }
-.weather-header-hbmenu{
-    font-size: 22px;
+
+.weather-header-units-form input{
+    display: none;
+}
+.weather-header-units-form {
+    grid-column: -1/1;
+    max-width: fit-content;
+    margin: 1.5em auto;
+    display: flex;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.2);
+    color: grey;
+}
+.weather-header-units-form label{
+    display: block;
+    padding: 0.5em 1em;
+}
+.weather-header-units-form label:hover{
+    cursor: pointer;
+}
+.checked{
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+    font-weight: bold;
 }
