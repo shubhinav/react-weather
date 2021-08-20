@@ -6,3 +6,12 @@
     border-radius: 15px;
     box-shadow: 1px 1px 8px -6px rgba(0,0,0,0.2);
 }
+.card-container:last-child{
+    margin-bottom: 0;
+}
+
+@media(min-width: 850px){
+    .card-container{
+        margin-bottom: 0;
+    }
+}

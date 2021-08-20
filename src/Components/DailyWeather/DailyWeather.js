@@ -13,7 +13,7 @@ export default function DailyWeather(){
     })
 
     return(
-        <div className="hourly-weather-wrapper">
+        <div className="daily-weather-wrapper">
             <div className="hourly-weather">
                 <p className="hourly-weather-title">Daily Weather</p>
                 {dailyWeather}

@@ -21,7 +21,7 @@ function getIcon(id,apiIcon){
             break;
         
         default:
-            icon=""
+            icon="ic:round-disabled-by-default"
         break;
     }
 
@@ -66,7 +66,7 @@ function getIconColor(id,apiIcon){
             break;
         
         default:
-            iconColor=""
+            iconColor="#333"
         break;
     }
 
@@ -84,5 +84,3 @@ function getIconColor(id,apiIcon){
 
 
 export {getIcon, getIconColor}
-
-// #FDC500

@@ -33,7 +33,7 @@
 .home-container{
     background-color: var(--light-colour);
     color: var(--dark-colour);
-    max-width: 1000px;
+    max-width: 900px;
     min-height: 100vh;
     padding: 1em 1.5em;
 }

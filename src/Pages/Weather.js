@@ -65,15 +65,16 @@ export default function Weather(){
                     </form>
                 </header>
                 
-                <CardContainer>
+                <CardContainer className="current-weather-area">
                     <CurrentWeather unit={currentUnits}/>
                 </CardContainer>
-                <CardContainer>
+                <CardContainer className="hourly-weather-area">
                     <HourlyWeather/>
                 </CardContainer>
-                <CardContainer>
+                <CardContainer className="daily-weather-area">
                     <DailyWeather/>
                 </CardContainer>
+                
             </div>
             : 
             <Loader/>)}

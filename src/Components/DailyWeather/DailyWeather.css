@@ -1,4 +1,6 @@
-
+.daily-weather-wrapper{
+    position: relative;
+}
 .single-day-weather{
     display: flex;
     justify-content: space-between;

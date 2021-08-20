@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { CityContext } from "../../Context/CityContext"
 import { Icon } from '@iconify/react';
-import "./CurrentWeather.css"
 import {convertTime} from "../../Utils/ConvertTime";
 import { getIcon, getIconColor } from "../../Utils/GetIconDetails";
+import "./CurrentWeather.css"
 
 
 export default function CurrentWeather({unit}){
@@ -16,8 +16,8 @@ export default function CurrentWeather({unit}){
         <>
             <div className="current-weather-main">
                 <h1 className="current-weather-main-temp">{Math.round(current.temp)}<span>&#176;{unit==="metric"?`C`: `F`}</span></h1>
-                <Icon icon={getIcon(weather.id,weather.icon)} style={{justifySelf: "right"}} width="100" height="100" color={getIconColor(weather.id,weather.icon)}/>
-                <p className="current-weather-main-desc"><span>{weather.description}</span></p>
+                <Icon icon={getIcon(weather.id,weather.icon)} className="current-weather-icon" color={getIconColor(weather.id,weather.icon)}/>
+                <p className="current-weather-main-desc">{weather.description}</p>
             </div>
 
             <div className="current-weather-secondary">
