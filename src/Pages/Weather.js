@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useContext, useState, useRef, useEffect} from 'react'
 import { CityContext } from '../Context/CityContext'
+import { ThemeContext } from '../Context/ThemeContext'
 import CardContainer from '../Containers/CardContainer'
 import CurrentWeather from '../Components/CurrentWeather/CurrentWeather'
 import HourlyWeather from '../Components/HourlyWeather/HourlyWeather'
@@ -13,6 +14,7 @@ import "./Weather.css"
 export default function Weather(){
 
     const {cityName, cityCoord, cityWeather, clearState, isError, getWeather} = useContext(CityContext)
+    const {theme} = useContext(ThemeContext)
     const [currentUnits, setCurrentUnits] = useState("metric")
     const isInitialMount = useRef(true);
 
@@ -43,12 +45,12 @@ export default function Weather(){
             : 
             (cityWeather && cityWeather.length!==0 
             ? 
-            <div className="weather-container">
+            <div className={`weather-container ${theme}-weather-container`}>
                 <header className="weather-header">
                     <Link to="/">
                         <button className="weather-header-back-btn" 
                                 onClick={()=>clearState()}>
-                                {<Icon icon="akar-icons:chevron-left" color= "#333" width="25px" height="25px"/>}
+                                {<Icon icon="akar-icons:chevron-left" width="25px" height="25px"/>}
                         </button>
                     </Link>
                     <h2 className="weather-header-city-name">{cityName}, <span>{convertTime(cityWeather.current.dt,cityWeather.timezone)}</span></h2>                    

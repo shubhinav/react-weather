@@ -30,16 +30,55 @@
 
 /*** LAYOUT AND STYLING ***/
 
-.home-container{
+.light-theme{
     background-color: var(--light-colour);
     color: var(--dark-colour);
+    transition: 0.2s;
+}
+
+.light-theme input{
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+    border: 1px solid gainsboro;
+}
+.light-theme .city-link div{
+    color: var(--dark-colour);
+    border-bottom: 1px solid gainsboro;
+}
+.light-theme .city-link div:hover{
+    background-color: #fafafa;
+}
+.light-theme .city-link-list{
+    border: 1px solid gainsboro;
+}
+.dark-theme{
+    background-color: var(--dark-colour);
+    color: var(--light-colour);
+    transition: 0.2s;
+}
+.dark-theme input{
+    background-color: rgb(80, 80, 80);
+    color: var(--light-colour);
+    border: 1px solid rgb(65, 65, 65);
+}
+.dark-theme .city-link div{
+    color: var(--light-colour);
+    border-bottom: 1px solid rgb(87, 87, 87);
+}
+.dark-theme .city-link div:hover{
+    background-color: #383838;
+}
+.dark-theme .city-link-list{
+    border: 1px solid rgb(87, 87, 87);
+}
+.home-container{
     max-width: 900px;
-    min-height: 100vh;
     padding: 1em 1.5em;
+    min-height: 100vh;
 }
 
 .home-content{
-    margin: 6em 0 6em;
+    margin: 5em 0;
 }
 
 .home-input-group{
@@ -53,9 +92,9 @@
     appearance: none;
     margin: 10px 0;
     padding: 0.75em;
-    border: 1px solid gainsboro;
     border-radius: 5px;
 }
+
 .home-input-group input:focus{
     outline: none;
     border: 2px solid var(--primary-colour)
@@ -83,25 +122,18 @@
 }
 
 .city-link-list{
-    border: 1px solid gainsboro;
     border-radius: 10px;
     margin-top: 2em;
 }
 
 .city-link{
     text-decoration: none;
-    color: var(--dark-colour);
 }
 .city-link p{
     margin: 0;
 }
 .city-link div{
     padding: 1em;
-    border-bottom: 1px solid gainsboro;
-}
-.city-link div:hover{
-    cursor: pointer;
-    background-color: #fafafa;
 }
 .city-link:last-child div{
     border-bottom: 0;
@@ -110,21 +142,36 @@
 .city-link:first-child div{
     border-radius: 10px 10px 0 0;
 }
+.city-link div:hover{
+    cursor: pointer;
+}
 .city-link-list{
     grid-column: -1/1;
 }
 .city-not-found{
     grid-column: -1/1;
     text-align: center;
-    color: red;
+    color: rgb(233, 74, 74);
     font-size: 18px;
     margin-top: 1.5em;
 }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+.theme-change-btn{
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    border: 0;
+    color: var(--light-colour);
+    background-color: var(--primary-colour);
+    box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.2);
+}
+.theme-change-btn:hover{
+    cursor: pointer;
+}
 
 @media(min-width: 680px){
 
@@ -158,6 +205,13 @@
     }
     .city-not-found{
         margin: 0;
+    }
+    .theme-change-btn{
+        font-size: 30px;
+        top: auto;
+        right: auto;
+        bottom: 20px;
+        left: 20px;
     }
 }
 

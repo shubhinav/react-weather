@@ -1,9 +1,11 @@
 import {Link} from 'react-router-dom'
 import React, { useState, useContext, useRef, useEffect } from 'react'
 import { CityContext } from '../Context/CityContext'
+import { ThemeContext } from '../Context/ThemeContext'
 import Fuse from 'fuse.js'
 import "./Home.css"
 import Loader from "../Components/Loader/Loader"
+import { Icon } from '@iconify/react'
 
 export default function Home(){
 
@@ -11,6 +13,7 @@ export default function Home(){
     const [cities, setCities] = useState()
     const [isLoading, setIsLoading] = useState(false)
     const {getWeather} = useContext(CityContext)
+    const {theme, changeTheme} = useContext(ThemeContext)
     const myRef = useRef()
 
 
@@ -34,10 +37,12 @@ export default function Home(){
         setCities(fuse.search(`=${input}`));
         setIsLoading(false)
     }
-    
     useEffect(()=>{
         myRef.current.focus();
     },[])
+    useEffect(()=>{
+        document.body.style.backgroundColor = theme==="light" ? "#eee" : "rgb(65,65,65)"
+    },[theme])
 
     const searchResults = cities && cities.map(city=>{
         return(
@@ -51,7 +56,8 @@ export default function Home(){
     })
 
     return(
-        <div className="home-container">
+        
+        <div className={`home-container ${theme}-theme`}>
             <h3 className="home-logo"><span>React</span>Weather</h3>
 
             <div className="home-content">
@@ -71,6 +77,9 @@ export default function Home(){
             ?<div className="city-not-found">City not found. Try a different name.</div>
             :<div className="city-link-list">{searchResults}</div>))}
 
+            <button className="theme-change-btn" onClick={changeTheme}><Icon icon="mdi:theme-light-dark"/></button>
         </div>
+            
+        
     )
 }

@@ -1,10 +1,58 @@
 .weather-container{
-    background-color: #fafafab6;
     max-width: 500px;
     min-height: 100vh;
     padding: 1em;
     color: var(--dark-colour);
 }
+
+
+/* DARK THEME STYLES */
+
+.dark-weather-container{
+    background-color: rgb(73, 73, 73);
+    color: var(--light-colour);
+}
+.dark-weather-container .weather-header-city-name span{
+    color: rgb(200, 200, 200);
+}
+.dark-weather-container .weather-header-units-form{
+    box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.4);
+    color: rgb(200, 200, 200);
+}
+.dark-weather-container .checked{
+    background-color: var(--dark-colour);
+    color: var(--light-colour);
+}
+.dark-weather-container .weather-header-back-btn{
+    color: var(--light-colour);
+}
+
+
+/* LIGHT THEME STYLES */
+
+.light-weather-container{
+    background-color: #fafafab6;
+    color: var(--dark-colour);
+}
+.light-weather-container .weather-header-city-name span{
+    color: grey;
+}
+.light-weather-container .checked{
+    background-color: var(--light-colour);
+    color: var(--dark-colour);
+}
+.light-weather-container .weather-header-units-form{
+    box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.2);
+    color: grey;
+}
+.light-weather-container .weather-header-back-btn{
+    color: var(--dark-colour);
+}
+
+
+
+
+/* GENERAL STYLES */
 
 .weather-header{
     display: grid;
@@ -17,7 +65,6 @@
 }
 .weather-header-city-name span{
     font-size: 16px;
-    color: grey;
 }
 
 .weather-header-back-btn{
@@ -39,8 +86,6 @@
     display: flex;
     border-radius: 50px;
     overflow: hidden;
-    box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.2);
-    color: grey;
 }
 .weather-header-units-form label{
     display: block;
@@ -50,8 +95,6 @@
     cursor: pointer;
 }
 .checked{
-    background-color: var(--light-colour);
-    color: var(--dark-colour);
     font-weight: bold;
 }
 

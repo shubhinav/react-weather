@@ -50,19 +50,19 @@ function getIconColor(id,apiIcon){
     
     switch (id.toString()[0]) {
         case "2":
-            iconColor="grey"
+            iconColor="rgb(160,160,160)"
             break;
         case "3":
-            iconColor="grey"
+            iconColor="rgb(160,160,160)"
             break;
         case "5":
-            iconColor="grey"
+            iconColor="rgb(160,160,160)"
             break;
         case "6":
             iconColor="#A5C6F7"
             break;
         case "7":
-            iconColor="grey"
+            iconColor="rgb(160,160,160)"
             break;
         
         default:
@@ -72,10 +72,10 @@ function getIconColor(id,apiIcon){
 
     if(id.toString()[0]==="8"){
         if(id===800){
-            apiIcon[2]==="d"?iconColor="#FDC500":iconColor="grey"
+            apiIcon[2]==="d"?iconColor="#FDC500":iconColor="rgb(160,160,160)"
         }
         else{
-            iconColor="grey"
+            iconColor="rgb(160,160,160)"
         }
     }
 

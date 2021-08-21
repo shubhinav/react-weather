@@ -14,8 +14,14 @@
     position: absolute;
     top: -45px;
     left: -12px;
-    color: grey;
     font-size: 18px;
+}
+.light-hourly-weather-title{
+    color: gray;
+}
+
+.dark-hourly-weather-title{
+    color: rgb(200,200,200);
 }
 
 .single-hour-weather{

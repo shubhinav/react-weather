@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { CityContextProvider } from './Context/CityContext';
+import { ThemeContextProvider } from './Context/ThemeContext';
 import {BrowserRouter as Router} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CityContextProvider>
-      <Router>
-        <App />
-      </Router>
-    </CityContextProvider>
+    <ThemeContextProvider>
+      <CityContextProvider>
+        <Router>
+          <App />
+        </Router>
+      </CityContextProvider>
+    </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
