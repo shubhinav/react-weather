@@ -6,6 +6,7 @@ import Fuse from 'fuse.js'
 import "./Home.css"
 import Loader from "../Components/Loader/Loader"
 import { Icon } from '@iconify/react'
+import {cityList} from "../Utils/getCities"
 
 export default function Home(){
 
@@ -23,9 +24,6 @@ export default function Home(){
 
     async function searchCity(){
         setIsLoading(true)
-        const response = await fetch("/city.list.json")
-        const cityList = await response.json();
-
         const fuse = new Fuse(cityList, {
             keys: [
               'name'
