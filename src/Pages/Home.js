@@ -6,7 +6,7 @@ import Fuse from 'fuse.js'
 import "./Home.css"
 import Loader from "../Components/Loader/Loader"
 import { Icon } from '@iconify/react'
-import {cityList} from "../Utils/getCities"
+import {cityList} from "../Utils/cityList"
 
 export default function Home(){
 
